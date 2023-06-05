@@ -3,8 +3,12 @@ for(var i =0; i<countr;i++){
 
 document.querySelectorAll(".drum")[i].addEventListener("click", aclick);
 document.addEventListener("keydown",press);
+
+
+
 }
 function aclick(){
+
 var textof = this.innerHTML;
 switch (textof) {
     case "w":
@@ -36,10 +40,12 @@ switch (textof) {
                                sanre.play();
                         break;        
     default:
-        alert("Press onto boxes");
+        
         break;
+       
+       
 }
-
+animate(textof);
 }
 function press(f)
 {
@@ -74,9 +80,26 @@ switch (x) {
                                sanre.play();
                         break;        
     default:
-        alert("Press the right keys");
+      console.log(x)
         break;
 }
-
+animate(x);
 }
+
+
+function animate(e){
+    var an = document.querySelector('.'+ e);
+    an.classList.add("pressed");
+    setTimeout(function () {
+       an.classList.remove("pressed");
+       
+    }, 200);
+       
+       
+     }
+
+
+
+
+
 
